@@ -1,5 +1,7 @@
 # leetcode-customization
 
+![preview](https://github.com/smugsheep/leetcode-customization/blob/main/lc-preview.png)
+
 ## options
 
 - **font size** (4px - 32px, 20px default)
