@@ -1,5 +1,7 @@
 # leetcode-customization
 
+customize leetcode's codemirror editor with very epic [stylus userscript](https://userstyles.world/style/6416/leetcode-customization)
+
 ![preview](https://github.com/smugsheep/leetcode-customization/blob/main/lc-preview.png)
 
 ## options
