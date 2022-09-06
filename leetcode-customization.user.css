@@ -1,0 +1,68 @@
+/* ==UserStyle==
+
+@name           leetcode customization
+@namespace      https://github.com/smugsheep/leetcode-customization
+@version        1.0.0
+@description    for leetcode's codemirror: custom font size, (google) fonts, themes
+@license        MIT
+@author         smugsheep
+@preprocessor   stylus
+
+@var number     fontSize    "font size"     [20, 4, 32, 1, "px"]
+@var select     fontFamily  "font family"   ["Azeret Mono", "Cousine", "DM Mono", "Fira Code*", "JetBrains Mono", "Roboto Mono", "Source Code Pro"]
+@var checkbox   themeOn     "enable custom theme　　　　(REPLACES BLACKBOARD)" 1
+@var select     theme       "code theme"    {
+    "Gruvbox Dark Hard*": "gruvbox-dark-hard"
+}
+
+==/UserStyle== */
+
+@-moz-document url-prefix("https://leetcode.com/problems/") {
+    
+    @import url('https://fonts.googleapis.com/css2?family=Azeret+Mono&family=Cousine&family=DM+Mono&family=Fira+Code&family=JetBrains+Mono&family=Roboto+Mono&family=Source+Code+Pro&display=swap');
+    
+    .container__YPDh {
+        font-size: fontSize !important;
+    }
+
+    .container__YPDh .CodeMirror {
+        font-family: fontFamily, monospace;
+    }
+    
+    if themeOn {
+        if theme == gruvbox-dark-hard {
+            
+            /* 
+            based off of:                   https://github.com/tomphilbin/gruvbox-themes-vscode 
+            and the original gruvbox theme: https://github.com/morhetz/gruvbox 
+            */
+            
+            .cm-s-blackboard.CodeMirror, .cm-s-blackboard .CodeMirror-gutters { background-color: #1D2021; color: #bdae93; }
+            .cm-s-blackboard .CodeMirror-gutters {background: #1D2021; border-right: 0px;}
+            .cm-s-blackboard .CodeMirror-linenumber {color: #7c6f64;}
+            .cm-s-blackboard .CodeMirror-cursor { border-left: 1px solid #a89984; }
+            .cm-s-blackboard.cm-fat-cursor .CodeMirror-cursor { background-color: #8e8d8875 !important; }
+            .cm-s-blackboard .cm-animate-fat-cursor { background-color: #8e8d8875 !important; }
+            .cm-s-blackboard div.CodeMirror-selected { background: #928374; }
+            .cm-s-blackboard span.cm-meta { color: #83a598; }
+            .cm-s-blackboard span.cm-comment { color: #928374; }
+            .cm-s-blackboard span.cm-number, span.cm-atom { color: #d3869b; }
+            .cm-s-blackboard span.cm-keyword { color: #f84934; }
+            .cm-s-blackboard span.cm-variable { color: #83a598; }
+            .cm-s-blackboard span.cm-variable-2 { color: #83a598; }
+            .cm-s-blackboard span.cm-variable-3, .cm-s-blackboard span.cm-type { color: #fabd2f; }
+            .cm-s-blackboard span.cm-operator { color: #8ec07c; }
+            .cm-s-blackboard span.cm-callee { color: #ebdbb2; }
+            .cm-s-blackboard span.cm-def { color: #FABD2F; }
+            .cm-s-blackboard span.cm-property { color: #83a598; }
+            .cm-s-blackboard span.cm-string { color: #b8bb26; }
+            .cm-s-blackboard span.cm-string-2 { color: #8ec07c; }
+            .cm-s-blackboard span.cm-qualifier { color: #8ec07c; }
+            .cm-s-blackboard span.cm-attribute { color: #8ec07c; }
+            .cm-s-blackboard .CodeMirror-activeline-background { background: #3c3836; }
+            .cm-s-blackboard .CodeMirror-matchingbracket { background: #928374; color:#282828 !important; }
+            .cm-s-blackboard span.cm-builtin { color: #fe8019; }
+            .cm-s-blackboard span.cm-tag { color: #fe8019; }
+        }
+    }
+}
